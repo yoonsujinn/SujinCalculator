@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./calc.css">
+    
+    <title>계산기2</title>
+</head>
+<body>
+    <div class="wrap">
+        <div class="calculator">
+            <div class="calWindow">
+                <div class="mainInput"></div>
+            </div>
+            <div class="btnWrap">
+                <table>
+                    <tr>
+                        <td data-number="reset" class="colorBtn" colspan="3" type="number">RESET</td>
+                        <td data-number="division" class="colorBtn">%</td>
+                    </tr>
+                    <tr>
+                        <td data-number="7" >7</td>
+                        <td data-number="8" >8</td>
+                        <td data-number="9" >9</td>
+                        <td data-number="multiplication" class="colorBtn">x</td>
+                    </tr>
+                    <tr>
+                        <td data-number="4" >4</td>
+                        <td data-number="5" >5</td>
+                        <td data-number="6" >6</td>
+                        <td data-number="sub" class="colorBtn">-</td>
+                    </tr>
+                    <tr>
+                        <td data-number="1">1</td>
+                        <td data-number="2">2</td>
+                        <td data-number="3">3</td>
+                        <td data-number="plus" class="colorBtn">+</td>
+                    </tr>
+                    <tr>
+                        <td data-number="0" colspan="2">0</td>
+                        <td data-number="." >.</td>
+                        <td data-number="equals" class="colorBtn">=</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+
+document.addEventListener('DOMContentLoaded', function() {
+    let tds = document.querySelectorAll('td')
+    let inPut = document.querySelector('.mainInput')
+
+// 마우스 클릭 
+tds.forEach(td => {
+    td.addEventListener('click',function(){
+        let tdAttr = td.getAttribute('data-number')
+        
+        // 숫자 입력
+        if(tdAttr == 0 || tdAttr ==1 || tdAttr ==2 || tdAttr ==3 || 
+        tdAttr ==4 || tdAttr ==5 || tdAttr ==6
+        ||tdAttr ==7 || tdAttr ==8 || tdAttr ==9 ||tdAttr =='.') {
+            windowCall(tdAttr)
+        //리셋함수호출
+        }else if (tdAttr == 'reset') {
+            windowReset();
+        }else if(tdAttr == 'plus')
+            plusPlay();
+        });
+    })
+
+
+// 키보드  입력
+window.addEventListener('keydown',function(){
+    keyPut();
+    console.log(event.keyCode)
+})
+function keyPut() {
+    let keyCondition1 = (event.keyCode > 47 && event.keyCode <58) || (event.keyCode > 95 && event.keyCode <106 || (event.keyCode ==190) || (event.keyCode ==110)) ;
+        if(keyCondition1){
+            windowCall(event.key)
+        }else if(event.keyCode ==27) {
+            windowReset();
+        }
+}
+// 화면에 입력숫자 표시 
+function windowCall(num) {
+    inPut.innerHTML += num;
+}
+
+// 계산기 리셋함수
+function windowReset() {
+    inPut.innerHTML ='';
+}
+
+
+function plusPlay() {
+    console.log('플러스 함수 시작!')
+    grayText();
+}
+
+function grayText() {
+    console.log('그레이텍스트 함수 시작!')
+    let grayText = document.createElement('div');
+    grayText.classList.add('grayText')
+    inPut.appendChild(grayText)
+    // grayText.classList.
+
+}
+});
+
+    
+</script>

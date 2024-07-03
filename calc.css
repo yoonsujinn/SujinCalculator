@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+ES:wght@100..400&display=swap');
+/*   font-family: "Playwrite ES", cursive; */
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;;
+}
+
+body {
+    background: #D2C4E8;
+    font-family: "Playwrite ES", cursive;
+}
+
+.wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #fff;
+}
+
+.calculator {
+    width: 390px;
+    height: 600px;
+    background: #504E52;
+    border-radius: 25px;
+}
+
+.calWindow {
+    width: 100%;
+    height: 145px;
+    border-radius: 25px 25px 0 0;
+    background: #000;
+    overflow: hidden;
+}
+
+.calWindow .mainInput {
+    width: 100%;
+    height: 100%;
+    background: none;
+    color: #fff;
+    font-size: 33px;
+    text-align: right;
+    margin: 0;
+    padding: 80px 20px 0 20px;
+    box-sizing: border-box;
+}
+
+
+.btnWrap {
+    height: 455px;
+    width: 100%;
+    border-radius: 0 0 0 31px;
+}
+
+
+
+table{
+    width: 100%;
+    height: 100%;
+    border-collapse: separate;
+    border-spacing: 10px;
+}
+
+tbody,
+td,
+tr {
+    border-radius: 0;
+}
+
+
+
+td {
+    width: 78px;
+    height: 79px;
+    text-align: center;
+    box-sizing: border-box;
+    font-size: 27px;
+    font-weight: bold;
+    border-radius: 70px;
+    padding: 4px 0px 0 0;
+    cursor: pointer;
+    background: #3B393E;
+    box-shadow: 2px 2px 0px 1px rgb(66, 66, 66), inset -2px -2px 0px 2px rgba(0, 0, 0, 0.2);
+}
+
+td:hover {
+    box-shadow: inset -2px -2px 0px 2px rgba(0, 0, 0, 0.2);
+    transform: translate(3px,3px);
+}
+
+.colorBtn {
+    background: #42384f;
+}
