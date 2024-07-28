@@ -29,12 +29,13 @@ tds.forEach(td => {
             
         }else if(tdAttr == 'equals') {
             resultPrint();
+            resultPrint();
         }
         });
         })
 
 
-// 키보드  입력
+// 키보드  입력git config --global user.email "이메일"
 window.addEventListener('keydown',function(){
     keyPut();
 })
